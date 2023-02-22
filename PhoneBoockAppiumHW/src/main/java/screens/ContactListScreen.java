@@ -55,11 +55,15 @@ public class ContactListScreen extends BaseScreen{
     public ContactListScreen isContactAddedByPhone(String phone){
         isShouldHave(activityTextView,"Contact list",10);
         checkContacts(phoneList,phone);
+
         return this;
     }
 
     public AddNewContactScreen openContactForm(){
+        if(activityTextView.getText().equals("Contact list")){
         plusButton.click();
+
+        }
         return new AddNewContactScreen(driver);
     }
 

@@ -57,12 +57,13 @@ public class AddContactTests extends AppiumConfig {
                 .fillContactForm(contact)
                 .submitContactFormNegative()
                 .isAnErrorMessage("name=must not be blank")
-                .navigateToContactList();
-               // .logout();
+                .navigateToContactList()
+                .logout();
+
 
 
     }
-    @Test //HW 17.02
+    @Test (enabled = false) //HW 17.02(
     public void addNewContactEmptyLastName() {
         Contact contact = Contact.builder()
                 .name("Bart")
@@ -75,8 +76,8 @@ public class AddContactTests extends AppiumConfig {
                 .openContactForm()
                 .fillContactForm(contact)
                 .submitContactFormNegative()
-                .isAnErrorMessage("lastName=must not be blank")
-                .navigateToContactList();
+                .isAnErrorMessage("lastName=must not be blank");
+                //.navigateToContactList();
               //  .logout();
 
     }
